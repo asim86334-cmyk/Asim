@@ -1,0 +1,6 @@
+{
+  "name": "SnapStream",
+  "description": "A modern video discovery and management platform inspired by Snaptube, featuring trending content, search, and a download manager.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "Download": {
+      "title": "Downloaded Video",
+      "description": "Information about a video downloaded by the user",
+      "type": "object",
+      "properties": {
+        "videoId": { "type": "string" },
+        "title": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "downloadedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["videoId", "title", "downloadedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Main user records"
+    },
+    "/users/{userId}/downloads/{downloadId}": {
+      "schema": "Download",
+      "description": "User's download history"
+    }
+  }
+}
